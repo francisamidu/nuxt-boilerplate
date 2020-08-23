@@ -1,0 +1,333 @@
+/*Flex mixins*/
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin flexCenter {
+  @include flex;
+  justify-content: center;
+}
+
+@mixin sans_style {
+  font-family: var(--sans);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+@mixin sans_big {
+  text-transform: uppercase;
+  font-family: var(--sans);
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+@mixin flexCenterVariant {
+  @include flex;
+  align-items: center;
+}
+
+@mixin card {
+  padding: 1rem 1.5rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: var(--white);
+  color: var(--dark);
+  width: 33.3%;
+  font-family: var(--open);
+  flex: 1;
+}
+
+@mixin flexSpaceAround {
+  @include flex;
+  justify-content: space-around;
+}
+
+@mixin col {
+  flex-direction: column;
+}
+
+@mixin center {
+  align-items: center;
+}
+
+@mixin shadow {
+  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+}
+
+@mixin shadowVariant {
+  box-shadow: 0 5px 15px 5px rgba($color: #000000, $alpha: 0.1);
+}
+
+@mixin centerVariant {
+  justify-content: center;
+}
+
+@mixin flexCenterBoth {
+  @include flexCenter;
+  align-items: center;
+}
+
+@mixin flexSpace {
+  @include flex;
+  justify-content: space-between;
+}
+
+@mixin flexCol {
+  @include flex;
+  flex-direction: column;
+}
+
+@mixin flexColCenter {
+  @include flexCol;
+  align-items: center;
+}
+
+@mixin flexColCenterBoth {
+  @include flexColCenter();
+  justify-content: center;
+}
+
+/*Position Mixins*/
+
+@mixin absolute {
+  position: absolute;
+}
+
+@mixin relative {
+  position: relative;
+}
+
+@mixin btn {
+  border-radius: 10px;
+  border: none;
+  color: var(--white);
+  padding: 12px 30px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 13px;
+  font-family: var(--open);
+  background: var(--primary);
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  min-width: 170px;
+
+  &:hover {
+    background: #1764ff;
+    cursor: pointer;
+    transition: all 0.4ms;
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+@mixin btn-variant {
+  background: var(--green);
+  padding: 12px 30px;
+  color: var(--white);
+  border-radius: 10px;
+  font-size: 14px !important;
+  font-weight: bold;
+  font-family: var(--open);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin btn-new {
+  height: 40px;
+  line-height: 48px;
+  @include flexCenterBoth;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: rgb(38, 127, 253);
+  color: var(--white) !important;
+  box-shadow: rgb(38, 127, 253) 0px 0px 0px 1px,
+    rgba(11, 37, 75, 0.12) 0px 2px 4px -2px;
+  padding: 0 30px;
+  border-radius: 4px;
+  border: none;
+  transition: all 180ms ease-out 0s;
+
+  &:hover {
+    background-color: rgb(86, 156, 255);
+    cursor: pointer;
+    transition: all 0.4ms;
+  }
+}
+
+@mixin form {
+  width: 90%;
+  max-width: 450px;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  @include flexCol;
+  @include relative;
+  padding: 2rem;
+  font-family: var(--open);
+
+  h1 {
+    margin: 0.5rem 0;
+    margin-left: 20px;
+    text-align: center;
+    @include h2;
+  }
+
+  h2 {
+    margin-left: 20px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    @include h5;
+    text-transform: capitalize !important;
+  }
+
+  .input-group {
+    @include relative;
+  }
+
+  span {
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .mb {
+    margin: 10px 0;
+  }
+
+  .input {
+    margin-top: 15px;
+    width: 100%;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 12px;
+    font-family: var(--open);
+    font-size: 15px;
+  }
+
+  .close {
+    @include absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    color: #0055ff;
+  }
+
+  .input:focus {
+    outline: none;
+  }
+
+  .input-group .material-icons {
+    @include absolute;
+    top: 8px;
+    left: 15px;
+    color: #0055ff;
+  }
+
+  .btn {
+    @include btn;
+    margin-top: 20px;
+  }
+
+  .invalid .input {
+    border: 1px solid var(--red);
+  }
+
+  .error {
+    color: var(--red);
+    margin: 5px 0;
+    font-family: var(--open);
+    font-size: 13px;
+  }
+
+  .btn {
+    align-self: center;
+    border-radius: 5px;
+  }
+
+  .pass {
+    @include flexSpace;
+  }
+
+  .pass span {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+@mixin headers {
+  h1 {
+    @include h2;
+    margin-bottom: 1em;
+  }
+
+  h2 {
+    @include h5;
+  }
+}
+
+@mixin li {
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-family: var(--open);
+}
+
+@mixin h4 {
+  letter-spacing: 0.0625rem;
+  color: #8898aa !important;
+  text-transform: uppercase !important;
+  margin-bottom: 0.25rem !important;
+  font-size: 0.625rem;
+  font-weight: 600;
+  line-height: 1.5;
+  font-family: var(--open);
+}
+
+@mixin h2 {
+  font-size: 1em;
+  font-family: var(--open);
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #65686b;
+}
+
+@mixin h5 {
+  letter-spacing: 0.0625em;
+  color: #8898aa !important;
+  text-transform: uppercase !important;
+  margin-bottom: 0.5em !important;
+  font-size: 1em;
+}
+
+@mixin h6 {
+  font-size: 0.95em;
+}
+
+@mixin label {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75em;
+  font-family: var(--open);
+}
+
+@mixin rounded {
+  border-radius: 50%;
+}

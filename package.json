@@ -1,0 +1,33 @@
+{
+  "name": "nuxt-plate",
+  "version": "1.0.0",
+  "description": "Nuxt boilerplate",
+  "author": "francisamidu",
+  "private": true,
+  "scripts": {
+    "serve": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxt/types": "*",
+    "@nuxt/typescript-build": "*",
+    "@nuxt/typescript-runtime": "*",
+    "@nuxtjs/auth": "*",
+    "node-sass": "*",
+    "nuxt": "*",
+    "sass": "*",
+    "sass-loader": "*",
+    "uuid": "*"
+  },
+  "devDependencies": {
+    "@types/eslint-plugin-prettier": "*",
+    "@types/node-sass": "*",
+    "@types/prettier": "*",
+    "@types/sass": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-prettier": "*",
+    "prettier": "*"
+  }
+}
